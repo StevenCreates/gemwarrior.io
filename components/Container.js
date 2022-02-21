@@ -8,6 +8,7 @@ export const Container = ({
   width,
   padding,
   className,
+  borderRadius,
 }) => {
   return (
     <>
@@ -19,8 +20,8 @@ export const Container = ({
       </div>
       <style jsx>{`
         .container {
-          background: #f1f8fd;
-          border-radius: 10px;
+          background: #E4EBF5;
+          border-radius: ${borderRadius ? borderRadius : '10px'};
           box-sizing: border-box;
           box-shadow: 5px 5px 10px #c8d0e7, -5px -5px 10px #ffffff;
           height: ${height};
@@ -28,12 +29,12 @@ export const Container = ({
           width: ${width};
         }
         .inset-container {
-          background: #f1f8fd;
-          border-radius: 10px;
+          background: #E4EBF5;
+          border-radius: ${borderRadius ? borderRadius : '10px'};
           box-sizing: border-box;
           box-shadow: inset 0.2rem 0.2rem 0.5rem #c8d0e7,
             inset -0.2rem -0.2rem 0.5rem #ffffff;
-          height: ${height};
+          height: ${height ? height : '100%'};
           padding: ${padding};
           width: ${width};
         }

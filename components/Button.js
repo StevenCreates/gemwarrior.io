@@ -14,32 +14,34 @@ const shapeSelector = {
 
 export const Button = ({
   className,
-  color = "blue",
+  color = "#0071FF",
   icon = "cmc",
-  onclick,
+  onClick,
+  ariaLabel,
   showIcon = true,
+  borderRadius,
   type = "brand",
   ...args
 }) => {
-  const colorProp = colorSelector[color];
-  const shapeProp = shapeSelector[type];
-  // console.log(shape)
-  console.log(shapeSelector);
   return (
     <>
-      <button className={`button ${className}`}>
+      <button
+        aria-label={ariaLabel ? ariaLabel : "button"}
+        onClick={onClick ? onClick : ""}
+        className={`button ${className}`}
+      >
         <CmcIcon className="icon" />
       </button>
       <style jsx>{`
         .button {
           cursor: pointer;
-          background-color: ${colorProp};
+          background-color: ${color ? color : "#0071FF"};
           border: none;
           outline: none;
           padding: 4px;
           width: 24px;
           height: 24px;
-          border-radius: ${shapeProp};
+          border-radius: ${borderRadius ? borderRadius : "10px"};
           display: block;
           transition: all 0.3s;
           box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.5),
