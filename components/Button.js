@@ -12,6 +12,13 @@ const shapeSelector = {
   standard: "10px",
 };
 
+const boxShadowSelector = {
+  inset: "inset 3px 3px 3px rgba(255, 255, 255, 0.5), inset -3px -3px 3px rgba(0, 0, 0, 0.05)",
+  standard: "5px 5px 10px #c8d0e7, -5px -5px 10px #ffffff;",
+};
+
+
+
 export const Button = ({
   className,
   color = "#0071FF",
@@ -20,9 +27,10 @@ export const Button = ({
   ariaLabel,
   showIcon = true,
   borderRadius,
-  type = "brand",
+  type = "standard",
   ...args
 }) => {
+  const boxShadow = boxShadowSelector[type]
   return (
     <>
       <button
@@ -44,8 +52,13 @@ export const Button = ({
           border-radius: ${borderRadius ? borderRadius : "10px"};
           display: block;
           transition: all 0.3s;
-          box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.5),
-            inset -3px -3px 3px rgba(0, 0, 0, 0.05);
+          box-shadow: ${boxShadow}
+        }
+        .button:hover {
+          box-shadow: ${type === "standard" ? boxShadowSelector.inset : boxShadowSelector.standard};
+        }
+        .button:active {
+          box-shadow: ${type === "standard" ? boxShadowSelector.inset : boxShadowSelector.standard};
         }
       `}</style>
     </>

@@ -2,6 +2,7 @@ import React from "react";
 import { Card } from "../components/Card";
 import { Container } from "../components/Container";
 import { CircleRank } from "../components/CircleRank";
+import { Button } from "../components/Button";
 
 const coins = [
   {
@@ -26,14 +27,29 @@ export default function testing() {
     <>
       {coins.map((coin) => (
         <div className="rank-card" key={coin.rank}>
-          <Card padding="4px" height="80px" width="200px">
+          <Card padding="4px" height="86px" width="200px">
             <div className="coin-info">
-            <CircleRank coin={coin} />
-            <div></div>
-            <div className="third-column">
-              <Container borderRadius={'0px 0px 10px 0px'} type="inset">s</Container>
-              <Container borderRadius={'0px 0px 10px 0px'} type="inset">d</Container>
-            </div>
+              <div className="rank-container">
+                <CircleRank coin={coin} />
+              </div>
+              <div>
+
+              </div>
+              <div className="third-column">
+                <Container 
+                height={"100%"} 
+                padding="2px" 
+                borderRadius={"0px 0px 10px 0px"}
+                type="inset"
+                >
+                <div className="link-container">
+                  {/* <Button type="inset" />
+                  <Button type="inset" />
+                  <Button type="inset" />
+                  <Button type="inset" /> */}
+                </div>
+                </Container>
+              </div>
             </div>
           </Card>
         </div>
@@ -52,20 +68,31 @@ export default function testing() {
             align-content: center;
             text-align: center;
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: 1fr;
+            grid-template-rows: repeat(2, 50%);
             grid-column-gap: 8px;
-            grid-row-gap: 8px;
+            grid-row-gap: 2px;
             box-sizing: border-box;
           }
           .third-column {
             height: 100%;
             display: grid;
-            align-items: center;
-            align-content: center;
-            text-align: center;
             box-sizing: border-box;
-            grid-row-gap: 4px;
-            grid-template-rows: repeat(2, 1fr);
+            grid-row-start: 2;
+            grid-column-start: 2;
+            grid-row-end: 3;
+            grid-column-end: 4;
+          }
+          .rank-container {
+            grid-row-start: 1;
+            grid-column-start: 1;
+            grid-row-end: 3;
+            grid-column-end: 2;
+          }
+          .link-container {
+              height: 100%;
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              grid-column-gap: 4px;
           }
         `}
       </style>
