@@ -2,9 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const rankColors = {
-  1: '#69BFA7',
-  2: '#355C7D',
-  3: '#F67280',
+  1: '#03A696',
+  2: '#049DBF',
+  3: '#F2B705',
   default: ''
 }
 
