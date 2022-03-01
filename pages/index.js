@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 import axios from "axios";
 import { Card } from "../components/Card";
 import { Container } from "../components/Container";
-import { Button } from "../components/Button";
+// import { Button } from "../components/Button";
 
 export default function Home() {
   // const fetchMyAPI = React.useCallback(async () => {
@@ -61,7 +61,7 @@ export default function Home() {
             </Container>
             <div className="links">
               <Container padding="8px" type="inset">
-                <Button color="blue"></Button>
+                {/* <Button color="blue"></Button> */}
               </Container>
             </div>
           </div>

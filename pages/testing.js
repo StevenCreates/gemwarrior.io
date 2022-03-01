@@ -16,12 +16,12 @@ const coins = [
   },
   {
     rank: 2,
-    symbol: "BTH",
+    symbol: "ZINU",
     icon: "",
   },
   {
     rank: 3,
-    symbol: "MCRT",
+    symbol: "BTH",
     icon: "",
   },
 ];

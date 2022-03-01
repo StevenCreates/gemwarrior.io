@@ -5,16 +5,15 @@ import { CircleRank } from "./CircleRank";
 import { LinkButton } from "./LinkButton";
 import { SymbolDisplay } from "./SymbolDisplay";
 import { GemButton } from "./GemButton";
-import Hamburger from "./icons/Hamburger"
+import Hamburger from "./icons/Hamburger";
+import Info from "./icons/Info";
+import EmptyHeart from "./icons/EmptyHeart";
+import Share from "./icons/Share";
 
 export const SmallCard = ({ coin, ...rest }) => {
-  const [show, setShow] = useState(false);
-  const handleShowMore = () => {
-    console.log(show);
-  };
-  const handleClick = () => {
-    console.log(coin);
-  };
+  // Coming soon to show drawer below card
+  // const [show, setShow] = useState(false);
+
   return (
     <>
       <div
@@ -34,13 +33,23 @@ export const SmallCard = ({ coin, ...rest }) => {
               <CircleRank coin={coin} />
             </div>
             <SymbolDisplay symbol={coin.symbol} />
-            {/* <LinkButton key={coin.rank + coin.symbol} borderRadius="5px" /> */}
-            <GemButton onClick={() => console.log(coin)} >
-              <Hamburger />
-            </GemButton>
-            <Container type="inset" borderRadius={"0"}>
-              +10
-            </Container>
+            <div className="action-container">
+              <GemButton borderRadius={'0'} onClick={() => console.log(coin)}>
+                <Info />
+              </GemButton>
+              <GemButton
+                // color={"#331327"}
+                borderRadius={'0'}
+                onClick={() => console.log(coin)}
+              >
+                <EmptyHeart />
+              </GemButton>
+              <GemButton 
+              borderRadius={'0 0 10px 0'}
+              onClick={() => console.log(coin)}>
+                <Share />
+              </GemButton>
+            </div>
           </div>
         </Card>
       </div>
@@ -63,29 +72,28 @@ export const SmallCard = ({ coin, ...rest }) => {
             grid-row-gap: 8px;
             box-sizing: border-box;
           }
-          .third-column {
-            height: 100%;
-            display: grid;
-            box-sizing: border-box;
-            grid-row-start: 2;
-            grid-column-start: 2;
-            grid-row-end: 3;
-            grid-column-end: 4;
-          }
           .rank-container {
             grid-row-start: 1;
             grid-column-start: 1;
             grid-row-end: 3;
             grid-column-end: 1;
           }
-          .link-container {
+          .action-container {
             height: 100%;
+            width: 100%;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-column-gap: 4px;
+            grid-row-start: 2;
+            grid-row-end: 2;
+            grid-column-start: 2;
+            grid-column-end: 4;
             align-items: center;
+            grid-template-columns: repeat(3, 1fr);
             align-content: center;
             text-align: center;
+            grid-column-gap: 6px;
+          }
+          .action-container-item {
+            margin-left: 6px;
           }
         `}
       </style>
