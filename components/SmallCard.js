@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Card } from "./Card";
-import { Container } from "./Container";
 import { CircleRank } from "./CircleRank";
-import { LinkButton } from "./LinkButton";
 import { SymbolDisplay } from "./SymbolDisplay";
 import { GemButton } from "./GemButton";
 import Hamburger from "./icons/Hamburger";
