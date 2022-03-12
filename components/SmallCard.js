@@ -24,7 +24,7 @@ export const SmallCard = ({ coin, ...rest }) => {
           key={coin.rank + coin.symbol}
           padding="8px"
           height="86px"
-          width="200px"
+          width="260px"
         >
           <div className="coin-info">
             <div className="rank-container">
