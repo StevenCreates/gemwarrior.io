@@ -32,20 +32,17 @@ export const SmallCard = ({ coin, ...rest }) => {
             </div>
             <SymbolDisplay symbol={coin.symbol} />
             <div className="action-container">
-              <GemButton borderRadius={'0'} onClick={() => console.log(coin)}>
-                <Info />
+              <GemButton borderRadius={"0"} onClick={() => console.log(coin)}>
+                <Info style={{ fill: "#737272" }} />
+              </GemButton>
+              <GemButton borderRadius={"0"} onClick={() => console.log(coin)}>
+                <EmptyHeart style={{ fill: "#737272" }} />
               </GemButton>
               <GemButton
-                // color={"#331327"}
-                borderRadius={'0'}
+                borderRadius={"0 0 10px 0"}
                 onClick={() => console.log(coin)}
               >
-                <EmptyHeart />
-              </GemButton>
-              <GemButton 
-              borderRadius={'0 0 10px 0'}
-              onClick={() => console.log(coin)}>
-                <Share />
+                <Share style={{ fill: "#737272" }} />
               </GemButton>
             </div>
           </div>
@@ -88,7 +85,10 @@ export const SmallCard = ({ coin, ...rest }) => {
             grid-template-columns: repeat(3, 1fr);
             align-content: center;
             text-align: center;
-            grid-column-gap: 6px;
+            box-sizing: border-box;
+            grid-column-gap: 8px;
+            padding-top: 12px;
+            padding-bottom: 12px;
           }
           .action-container-item {
             margin-left: 6px;

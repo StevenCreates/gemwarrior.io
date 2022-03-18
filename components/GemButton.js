@@ -39,12 +39,14 @@ export const GemButton = forwardRef(
             justify-content: center;
             border: none;
             border-radius: ${borderRadius ? borderRadius : '10px'};
-            padding: ${paddingProp ? paddingProp : '8px'};
+            padding: ${paddingProp ? paddingProp : '12px'};
             cursor: disabled ? not-allowed : pointer;
             white-space: nowrap;
             position: relative;
             margin: 0;
             width: auto;
+            box-sizing: border-box;
+            height: 32px;
             background: ${color ? color : '#E4EBF5'};
             box-shadow: ${boxShadowProp}
           }
