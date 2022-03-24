@@ -1,5 +1,6 @@
 import React from "react";
 import { SmallCard } from "../components/SmallCard";
+import { Button } from "thor-components";
 
 const coins = [
   {
@@ -24,6 +25,7 @@ export default function testing() {
 
   return (
     <div className="rank-container">
+     <Button size="small">Button</Button>
       {coins.map((coin, index) => {
         return (
           <div key={`${coin.symbol}-${index}`}>
