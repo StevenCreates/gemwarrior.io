@@ -19,7 +19,7 @@
     "react-dom": "17.0.2",
     "steven-hofheins": "^1.9.0",
     "styled-components": "^5.3.3",
-    "thor-components": "^0.1.22"
+    "thor-components": "^0.1.25"
   },
   "devDependencies": {
     "@babel/core": "^7.17.7",
